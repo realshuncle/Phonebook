@@ -13,3 +13,9 @@ Phonebook::~Phonebook()
     delete ui;
 }
 
+
+void Phonebook::on_actionCreate_triggered()
+{
+
+}
+
