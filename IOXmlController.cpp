@@ -232,17 +232,21 @@ bool IOXmlController::Write(Contact contact)
 //
 //	return true;
 //}
-/*
+IOXmlController::IOXmlController()
+{
+    OpenXml("base.contact");
+}
 IOXmlController::IOXmlController(QString path)
 {
+    OpenXml(path);
     //TODO если не может быть открыт
-    QFile file(path);
+    /*QFile file(path);
     if (!file.open(QIODevice::ReadWrite))
         return;
     if (!Document1.setContent(&file)) {
         file.close();
         return;
     }
-    file.close();
+    file.close();*/
 }
-*/
+

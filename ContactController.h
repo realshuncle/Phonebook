@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include "Contact.h"
-//#include "IOXmlController.h"
+#include "IOXmlController.h"
 
 class ContactController
 {

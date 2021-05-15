@@ -6,6 +6,7 @@ Phonebook::Phonebook(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Phonebook)
 {
+    //FileController();
     ui->setupUi(this);
 }
 
@@ -23,9 +24,16 @@ void Phonebook::on_actionCreate_triggered()
 
 void Phonebook::on_actionOpen_triggered()
 {
-    IOXmlController a;
-    bool f = 0;
+    FileController.
+    //IOXmlController a("");
+    //bool f = 0;
     f = a.OpenXml();
     ui->leSearch->setText(QString::number(f));
+}
+
+
+void Phonebook::on_actionNew_triggered()
+{
+
 }
 

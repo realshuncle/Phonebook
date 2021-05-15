@@ -2,6 +2,7 @@
 #define PHONEBOOK_H
 
 #include <QMainWindow>
+#include "IOXmlController.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Phonebook; }
@@ -20,7 +21,10 @@ private slots:
 
     void on_actionOpen_triggered();
 
+    void on_actionNew_triggered();
+
 private:
+    IOXmlController FileController;
     Ui::Phonebook *ui;
 };
 #endif // PHONEBOOK_H

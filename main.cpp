@@ -1,5 +1,5 @@
 #include "phonebook.h"
-
+#include "IOXmlController.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -18,6 +18,12 @@ int main(int argc, char *argv[])
         }
     }
     Phonebook w;
+    IOXmlController fileController("base.contact");
+
     w.show();
+
+
+
+    //w.
     return a.exec();
 }

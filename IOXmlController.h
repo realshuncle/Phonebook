@@ -16,7 +16,8 @@
     TiXmlDocument Document;
     //Contact contact;
 public:
-    //IOXmlController(QString path);
+    IOXmlController();
+    IOXmlController(QString path);
     //открывает файл на запись
     bool OpenXml(QString path = "");
     //открывает файл на запись
