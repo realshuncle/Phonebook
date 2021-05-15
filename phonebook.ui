@@ -81,18 +81,6 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>751</width>
-        <height>304</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>751</width>
-        <height>16777215</height>
-       </size>
-      </property>
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
@@ -115,7 +103,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -216,7 +204,7 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionCreate"/>
+    <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_as"/>
@@ -260,9 +248,9 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionCreate">
+  <action name="actionNew">
    <property name="text">
-    <string>Create</string>
+    <string>New</string>
    </property>
   </action>
   <action name="actionLanguage">

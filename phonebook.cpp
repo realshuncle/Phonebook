@@ -1,4 +1,5 @@
 #include "phonebook.h"
+#include "IOXmlController.h"
 #include "ui_phonebook.h"
 
 Phonebook::Phonebook(QWidget *parent)
@@ -17,5 +18,14 @@ Phonebook::~Phonebook()
 void Phonebook::on_actionCreate_triggered()
 {
 
+}
+
+
+void Phonebook::on_actionOpen_triggered()
+{
+    IOXmlController a;
+    bool f = 0;
+    f = a.OpenXml();
+    ui->leSearch->setText(QString::number(f));
 }
 

@@ -1,8 +1,8 @@
 #pragma once
-#include <string>;
-#include <vector>;
-#include "Contact.h";
-#include "IOXmlController.h";
+#include <string>
+#include <vector>
+#include "Contact.h"
+//#include "IOXmlController.h"
 
 class ContactController
 {

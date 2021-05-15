@@ -15,6 +15,11 @@ public:
     Phonebook(QWidget *parent = nullptr);
     ~Phonebook();
 
+private slots:
+    void on_actionCreate_triggered();
+
+    void on_actionOpen_triggered();
+
 private:
     Ui::Phonebook *ui;
 };

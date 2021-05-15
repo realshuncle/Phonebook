@@ -1,5 +1,7 @@
 #include "IOXmlController.h"
 
+
+
 //TODO: в файле настроек определить место хранения
 //TiXmlDocument IOXmlController::doc;
 
@@ -9,18 +11,49 @@ bool IOXmlController::IsOpen(TiXmlDocument doc)
 		return false;
 	return true;
 }
-bool IOXmlController::OpenXml(std::string path)
+bool IOXmlController::OpenXml(QString path)
 {
-	if (Document.LoadFile(path.c_str()))
-		return true;
+    if (path == "")
+    {
+        path = QFileDialog::getOpenFileName(nullptr, "Open the file");
+    }
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::warning(nullptr, "Warning", "Cannot open file : " + file.errorString());
+        return 0;
+    }
+    //setWindowTitle(fileName);
+    if (!Document1.setContent(&file)) {
+        file.close();
+        return 0;
+    }
+    file.close();
+
+    //if (Document.LoadFile(path.c_str()))
+        //return true;
 	//TODO исключение на неоткрытие
-	return false;
+    //return false;
+    return 1;
 }
 
 bool IOXmlController::SaveXml()
 {
-	Document.SaveFile();
-	return true;
+    QString fileName = QFileDialog::getSaveFileName(nullptr, "Open the file");
+    QFile file(fileName);
+    //TODO: если существуует файл QFile::NewOnly, если не существуует QFile::ExistingOnly
+    if(!file.open(QFile::WriteOnly))
+    {
+        QMessageBox::warning(nullptr, "Warning", "Cannot save file :" + file.errorString());
+        return 0;
+    }
+    //setWindowTitle(fileName);
+    QTextStream out(&file);
+    Document1.save(out, 4);
+    file.close();
+    return 1;
+    //Document.SaveFile();
+    //return true;
 }
 
 bool IOXmlController::Delete(int id)
@@ -199,9 +232,17 @@ bool IOXmlController::Write(Contact contact)
 //
 //	return true;
 //}
-
-IOXmlController::IOXmlController(std::string path)
+/*
+IOXmlController::IOXmlController(QString path)
 {
-	//TODO если не может быть открыт
-	Document.LoadFile(path.c_str());
+    //TODO если не может быть открыт
+    QFile file(path);
+    if (!file.open(QIODevice::ReadWrite))
+        return;
+    if (!Document1.setContent(&file)) {
+        file.close();
+        return;
+    }
+    file.close();
 }
+*/
