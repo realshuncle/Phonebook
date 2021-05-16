@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "IOXmlController.h"
+#include "ContactController.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Phonebook; }
@@ -17,14 +18,14 @@ public:
     ~Phonebook();
 
 private slots:
-    void on_actionCreate_triggered();
-
-    void on_actionOpen_triggered();
 
     void on_actionNew_triggered();
 
+    void on_actionSave_triggered();
+
 private:
     IOXmlController FileController;
+    ContactController Controller;
     Ui::Phonebook *ui;
 };
 #endif // PHONEBOOK_H

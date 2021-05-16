@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
         }
     }
     Phonebook w;
-    IOXmlController fileController("base.contact");
+   // IOXmlController fileController("base.contact");
 
     w.show();
 

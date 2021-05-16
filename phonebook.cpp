@@ -8,6 +8,9 @@ Phonebook::Phonebook(QWidget *parent)
 {
     //FileController();
     ui->setupUi(this);
+    FileController.OpenXml("base.contact");
+
+    ui->tbMain->insertRow(ui->tbMain->rowCount() + 1);
 }
 
 Phonebook::~Phonebook()
@@ -15,25 +18,14 @@ Phonebook::~Phonebook()
     delete ui;
 }
 
-
-void Phonebook::on_actionCreate_triggered()
-{
-
-}
-
-
-void Phonebook::on_actionOpen_triggered()
-{
-    FileController.
-    //IOXmlController a("");
-    //bool f = 0;
-    f = a.OpenXml();
-    ui->leSearch->setText(QString::number(f));
-}
-
-
 void Phonebook::on_actionNew_triggered()
 {
+    FileController.NewXml();
+}
 
+
+void Phonebook::on_actionSave_triggered()
+{
+    FileController.SaveXml();
 }
 

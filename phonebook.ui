@@ -74,7 +74,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="tbMain">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -103,7 +103,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderVisible">
-       <bool>false</bool>
+       <bool>true</bool>
       </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -117,49 +117,19 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Новая строка</string>
-       </property>
-      </row>
       <column>
        <property name="text">
-        <string>Новый столбец</string>
+        <string>Name</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Новый столбец</string>
+        <string>Phone</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Новый столбец</string>
+        <string>Information</string>
        </property>
       </column>
      </widget>
