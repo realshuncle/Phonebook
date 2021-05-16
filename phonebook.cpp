@@ -8,8 +8,11 @@ Phonebook::Phonebook(QWidget *parent)
 {
     //FileController();
     ui->setupUi(this);
-    FileController.OpenXml("base.contact");
-
+    Controller.OpenXml("base.contact");
+    for (auto i : Controller.GetContacts())
+    {
+        Controller.Read()
+    }
     ui->tbMain->insertRow(ui->tbMain->rowCount() + 1);
 }
 

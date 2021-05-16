@@ -24,7 +24,7 @@ private slots:
     void on_actionSave_triggered();
 
 private:
-    IOXmlController FileController;
+    //IOXmlController FileController;
     ContactController Controller;
     Ui::Phonebook *ui;
 };
