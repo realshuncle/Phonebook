@@ -2,10 +2,11 @@
 
 ContactController::ContactController()
 {
-    OpenXml("base.contact");
-    SetAmount();
-    for (int i = 0; i < Contact::GetAmount(); i++)
-        Contacts.push_back(i);
+    bool f = OpenXml("base.contact");
+    if(f)
+    {
+        f = false;
+    }
 }
 /*
 bool ContactController::Sort(IOXmlController ioxmlctrl, std::string cond, bool mode)
@@ -49,20 +50,20 @@ bool ContactController::Sort(IOXmlController ioxmlctrl, std::string cond, bool m
 
 bool ContactController::FindAll(std::string cond)
 {
-	Contact temp;
+    //Contact temp;
 	Contacts.clear();
-	for (int i = 0; i < Contact::GetAmount(); i++) {
-        Read(temp, i);
-        if (long(temp.GetName().find(cond)) != -1 ||
-            long(temp.GetPhone().find(cond)) != -1 ||
-            long(temp.GetInformation().find(cond)) != -1
+    for (int i = 0; i < contact.GetAmount(); i++) {
+        Read(i);
+        if (long(contact.GetName().find(cond)) != -1 ||
+            long(contact.GetPhone().find(cond)) != -1 ||
+            long(contact.GetInformation().find(cond)) != -1
 			)
 			Contacts.push_back(i);
 	}
 	return true;
 }
 
-bool ContactController::Read(Contact& contact, int id)
+bool ContactController::Read(int id)
 {
     TiXmlHandle doc(&Document);
     TiXmlElement* el = doc.FirstChildElement().FirstChild(("ID_" + std::to_string(id)).c_str()).Element();
@@ -81,7 +82,7 @@ std::vector<int> ContactController::GetContacts()
 	return Contacts;
 }
 
-bool ContactController::Add(Contact contact)
+bool ContactController::Add()
 {
     //может проверять указатель на NULL
     //TiXmlDocument doc;
@@ -125,7 +126,7 @@ bool ContactController::SetAmount()
 {
 	Contact temp;
 	int i = 0;
-    while (Read(temp, i))
+    while (Read(i))
 		i++;
 	Contact::SetAmount(i);
     return true;
@@ -133,8 +134,14 @@ bool ContactController::SetAmount()
 
 bool ContactController::OpenXml(std::string path)
 {
+    Contacts.clear();
     if (Document.LoadFile(path.c_str()))
+    {
+        SetAmount();
+        for (int i = 0; i < Contact::GetAmount(); i++)
+            Contacts.push_back(i);
         return true;
+    }
     NewXml();
     return false;
 }
@@ -177,7 +184,7 @@ bool ContactController::Delete(int id)
     return false;
 }
 
-bool ContactController::Edit(int id, Contact contact)
+bool ContactController::Edit(int id)
 {
     TiXmlHandle doc(&Document);
     TiXmlElement* el = doc.FirstChildElement().FirstChild(("ID_" + std::to_string(id)).c_str()).Element();

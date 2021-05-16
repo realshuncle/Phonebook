@@ -13,8 +13,8 @@ class ContactController
     bool SetAmount();
     bool IsOpen(TiXmlDocument doc);
     TiXmlDocument Document;
-    //Contact contact;
 public:
+    Contact contact;
     //конструктор контроллера
     ContactController();
     //открывает файл на запись
@@ -26,11 +26,11 @@ public:
     //удал€ет элемент из файла
     bool Delete(int id);
     //реактирует элемент
-    bool Edit(int id, Contact contact);
+    bool Edit(int id);
     //считывает элемент с файла
-    bool Read(Contact &contact, int id);
+    bool Read(int id);
     //функци€ добавл€ет контакт
-    bool Add(Contact contact);
+    bool Add();
 	//функци€ сортировки
     //bool Sort(IOXmlController ioxmlctrl, std::string cond, bool mode = 0);
 	//функци€ отбирает контакты удовлетвор€ющие условию
