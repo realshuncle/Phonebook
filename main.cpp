@@ -1,8 +1,9 @@
 #include "phonebook.h"
-#include "IOXmlController.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+//#include <string>
+//#include <vector>
 
 int main(int argc, char *argv[])
 {
@@ -18,8 +19,8 @@ int main(int argc, char *argv[])
         }
     }
     Phonebook w;
-   // IOXmlController fileController("base.contact");
-
+   /*QObject::connect(w.dialogNewContact, SIGNAL(newContactEntered(std::vector<std::string>)),
+                         &w, SLOT(onnewContactEntered(std::vector<std::string>)));*/
     w.show();
 
 

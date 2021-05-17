@@ -11,12 +11,10 @@ CONFIG += c++11
 SOURCES += \
     Contact.cpp \
     ContactController.cpp \
-    IOXmlController.cpp \
     PhoneNumber.cpp \
-    dialog.cpp \
+    dialogeditcontact.cpp \
     dialognewcontact.cpp \
     main.cpp \
-    newcontact.cpp \
     phonebook.cpp \
     tinystr.cpp \
     tinyxml.cpp \
@@ -26,19 +24,16 @@ SOURCES += \
 HEADERS += \
     Contact.h \
     ContactController.h \
-    IOXmlController.h \
     PhoneNumber.h \
-    dialog.h \
+    dialogeditcontact.h \
     dialognewcontact.h \
-    newcontact.h \
     phonebook.h \
     tinystr.h \
     tinyxml.h
 
 FORMS += \
-    dialog.ui \
+    dialogeditcontact.ui \
     dialognewcontact.ui \
-    newcontact.ui \
     phonebook.ui
 
 TRANSLATIONS += \

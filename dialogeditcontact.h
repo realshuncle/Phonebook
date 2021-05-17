@@ -1,21 +1,26 @@
-#ifndef DIALOGNEWCONTACT_H
-#define DIALOGNEWCONTACT_H
+#ifndef DIALOGEDITCONTACT_H
+#define DIALOGEDITCONTACT_H
 
 #include <QDialog>
 #include <QCloseEvent>
 
 namespace Ui {
-class DialogNewContact;
+class DialogEditContact;
 }
 
-class DialogNewContact : public QDialog
+class DialogEditContact : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit DialogNewContact(QWidget *parent = nullptr);
+    explicit DialogEditContact(QWidget *parent = nullptr);
     //QString getTextboxText();
-    ~DialogNewContact();
+    ~DialogEditContact();
+
+    void SetDate(std::vector<std::string> date);
+    /*void SetPhone(std::string);
+    void SetInformation();
+    void SetID();*/
 
 private slots:
     void closeEvent(QCloseEvent *event);
@@ -27,7 +32,8 @@ private slots:
     void on_btCancel_clicked();
 
 private:
-    Ui::DialogNewContact *ui;
+    std::string Id;
+    Ui::DialogEditContact *ui;
 
 signals:
     //new

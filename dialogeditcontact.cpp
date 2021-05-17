@@ -1,9 +1,9 @@
-#include "dialognewcontact.h"
-#include "ui_dialognewcontact.h"
+#include "dialogeditcontact.h"
+#include "ui_dialogeditcontact.h"
 
-DialogNewContact::DialogNewContact(QWidget *parent) :
+DialogEditContact::DialogEditContact(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DialogNewContact)
+    ui(new Ui::DialogEditContact)
 {
     QDialog::setModal(true);
     ui->setupUi(this);
@@ -11,23 +11,24 @@ DialogNewContact::DialogNewContact(QWidget *parent) :
                 this, SIGNAL(onButtonOkPressed()));*/
 }
 
-void DialogNewContact::onButtonOkPressed()
+void DialogEditContact::onButtonOkPressed()
 {
     // Emitting a signal with the new text
     std::vector<std::string> temp;
     temp.push_back(ui->leName->text().toStdString());
     temp.push_back(ui->lePhone->text().toStdString());
     temp.push_back(ui->teInformation->toPlainText().toStdString());
+    temp.push_back(Id);
     emit this->newContactEntered(temp);
     //emit this->newContactEntered("temp");
 }
 
-DialogNewContact::~DialogNewContact()
+DialogEditContact::~DialogEditContact()
 {
     delete ui;
 }
 
-void DialogNewContact::closeEvent(QCloseEvent *event)
+void DialogEditContact::closeEvent(QCloseEvent *event)
 {
     ui->leName->setText("");
     ui->lePhone->setText("");
@@ -44,14 +45,14 @@ void DialogNewContact::closeEvent(QCloseEvent *event)
     return ui->lePhone->text();
 }*/
 
-void DialogNewContact::on_btOk_clicked()
+void DialogEditContact::on_btOk_clicked()
 {
     QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
     if (rx.exactMatch(ui->lePhone->text())) {
         onButtonOkPressed();
-        ui->leName->setText("");
-        ui->lePhone->setText("");
-        ui->teInformation->setText("");
+        //ui->leName->setText("");
+        //ui->lePhone->setText("");
+        //ui->teInformation->setText("");
         this->close();
         //this->destroy();
     }
@@ -61,12 +62,19 @@ void DialogNewContact::on_btOk_clicked()
 }
 
 
-void DialogNewContact::on_btCancel_clicked()
+void DialogEditContact::on_btCancel_clicked()
 {
-    ui->leName->setText("");
-    ui->lePhone->setText("");
-    ui->teInformation->setText("");
+    //ui->leName->setText("");
+    //ui->lePhone->setText("");
+    //ui->teInformation->setText("");
     this->close();
     //this->destroy();
 }
 
+void DialogEditContact::SetDate(std::vector<std::string> date)
+{
+    ui->leName->setText(QString::fromStdString(date[0]));
+    ui->lePhone->setText(QString::fromStdString(date[1]));
+    ui->teInformation->setText(QString::fromStdString(date[2]));
+    this->Id = date[3];// stoi(date[3]);
+}

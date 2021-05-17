@@ -4,6 +4,7 @@
 #include <QMainWindow>
 //#include "IOXmlController.h"
 #include "ContactController.h"
+#include "dialogeditcontact.h"
 #include "dialognewcontact.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,10 +29,21 @@ private slots:
 
     void on_btNew_clicked();
 
+    void onnewContactEntered(const std::vector<std::string> &con);
+
+    void oneditContact(const std::vector<std::string> &con);
+
+    //void onnewContactEntered(const QString &con);
+
+    void on_btEdit_clicked();
+
+    void on_tbMain_cellDoubleClicked(int row, int column);
+
 private:
     //IOXmlController FileController;
     ContactController Controller;
     Ui::Phonebook *ui;
     DialogNewContact *dialogNewContact;
+    DialogEditContact *dialogEditContact;
 };
 #endif // PHONEBOOK_H
