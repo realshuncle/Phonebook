@@ -26,10 +26,13 @@ private slots:
     void closeEvent(QCloseEvent *event);
     //new
     void onButtonOkPressed();
+    void onButtonDeletePressed();
     //void onTextBoxReturnPressed();
     void on_btOk_clicked();
 
     void on_btCancel_clicked();
+
+    void on_btDelete_clicked();
 
 private:
     std::string Id;
@@ -37,7 +40,8 @@ private:
 
 signals:
     //new
-    void newContactEntered(const std::vector<std::string> &con);
+    void editContactEntered(const std::vector<std::string> &con);
+    void deleteContactEntered(int id);
     //void newContactEntered(const QString &con);
     //void newTextEntered(const QString &text);
 };

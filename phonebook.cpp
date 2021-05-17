@@ -11,8 +11,10 @@ Phonebook::Phonebook(QWidget *parent)
     dialogEditContact = new DialogEditContact();
     QObject::connect(dialogNewContact, SIGNAL(newContactEntered(std::vector<std::string>)),
                           this, SLOT(onnewContactEntered(std::vector<std::string>)));
-    QObject::connect(dialogEditContact, SIGNAL(newContactEntered(std::vector<std::string>)),
+    QObject::connect(dialogEditContact, SIGNAL(editContactEntered(std::vector<std::string>)),
                           this, SLOT(oneditContact(std::vector<std::string>)));
+    QObject::connect(dialogEditContact, SIGNAL(deleteContactEntered(int)),
+                          this, SLOT(ondeleteContact(int)));
     ui->tbMain->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->tbMain->setColumnCount(4);
     ui->tbMain->setColumnHidden(3, true);
@@ -142,7 +144,11 @@ void Phonebook::oneditContact(const std::vector<std::string> &con)
     item->setText(QString::number(Controller.contact.GetAmount()));
     ui->tbMain->setItem(ui->tbMain->rowCount() - 1, 3, item);*/
 }
-
+void Phonebook::ondeleteContact(int id)
+{
+    Controller.Delete(id);
+    ui->tbMain->removeRow(ui->tbMain->currentRow());
+}
 void Phonebook::on_btEdit_clicked()
 {
     /*//QTableWidgetItem* item;

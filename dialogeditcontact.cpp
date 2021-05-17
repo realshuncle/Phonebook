@@ -19,7 +19,7 @@ void DialogEditContact::onButtonOkPressed()
     temp.push_back(ui->lePhone->text().toStdString());
     temp.push_back(ui->teInformation->toPlainText().toStdString());
     temp.push_back(Id);
-    emit this->newContactEntered(temp);
+    emit this->editContactEntered(temp);
     //emit this->newContactEntered("temp");
 }
 
@@ -77,4 +77,14 @@ void DialogEditContact::SetDate(std::vector<std::string> date)
     ui->lePhone->setText(QString::fromStdString(date[1]));
     ui->teInformation->setText(QString::fromStdString(date[2]));
     this->Id = date[3];// stoi(date[3]);
+}
+
+void DialogEditContact::on_btDelete_clicked()
+{
+    onButtonDeletePressed();
+    this->close();
+}
+void DialogEditContact::onButtonDeletePressed()
+{
+    emit this->deleteContactEntered(stoi(this->Id));
 }

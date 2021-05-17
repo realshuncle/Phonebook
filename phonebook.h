@@ -33,6 +33,8 @@ private slots:
 
     void oneditContact(const std::vector<std::string> &con);
 
+    void ondeleteContact(int id);
+
     //void onnewContactEntered(const QString &con);
 
     void on_btEdit_clicked();
