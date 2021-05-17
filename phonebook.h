@@ -4,7 +4,7 @@
 #include <QMainWindow>
 //#include "IOXmlController.h"
 #include "ContactController.h"
-#include "newcontact.h"
+#include "dialognewcontact.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Phonebook; }
@@ -32,6 +32,6 @@ private:
     //IOXmlController FileController;
     ContactController Controller;
     Ui::Phonebook *ui;
-    NewContact *dialog;
+    DialogNewContact *dialogNewContact;
 };
 #endif // PHONEBOOK_H

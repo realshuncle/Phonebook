@@ -14,6 +14,7 @@ SOURCES += \
     IOXmlController.cpp \
     PhoneNumber.cpp \
     dialog.cpp \
+    dialognewcontact.cpp \
     main.cpp \
     newcontact.cpp \
     phonebook.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     IOXmlController.h \
     PhoneNumber.h \
     dialog.h \
+    dialognewcontact.h \
     newcontact.h \
     phonebook.h \
     tinystr.h \
@@ -35,6 +37,7 @@ HEADERS += \
 
 FORMS += \
     dialog.ui \
+    dialognewcontact.ui \
     newcontact.ui \
     phonebook.ui
 

@@ -11,7 +11,7 @@ Phonebook::Phonebook(QWidget *parent)
     ui->tbMain->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     for (auto i : Controller.GetContacts())
     {
-        dialog = new NewContact();
+        dialogNewContact = new DialogNewContact();
         ui->tbMain->insertRow(rowCount);
         Controller.Read(i);
         QTableWidgetItem* item = new QTableWidgetItem;
@@ -77,6 +77,6 @@ void Phonebook::on_btSearch_clicked()
 void Phonebook::on_btNew_clicked()
 {
    // IOXmlController fileController("base.contact");
-    dialog->show();
+    dialogNewContact->show();
 }
 
