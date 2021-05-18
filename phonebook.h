@@ -45,7 +45,7 @@ private slots:
 
     //void onnewContactEntered(const QString &con);
 
-    void on_btEdit_clicked();
+    //void on_btEdit_clicked();
 
     void on_tbMain_cellDoubleClicked(int row, int column);
 

@@ -11,7 +11,6 @@ CONFIG += c++11
 SOURCES += \
     Contact.cpp \
     ContactController.cpp \
-    PhoneNumber.cpp \
     dialogeditcontact.cpp \
     dialognewcontact.cpp \
     dialogsave.cpp \
@@ -25,7 +24,6 @@ SOURCES += \
 HEADERS += \
     Contact.h \
     ContactController.h \
-    PhoneNumber.h \
     dialogeditcontact.h \
     dialognewcontact.h \
     dialogsave.h \

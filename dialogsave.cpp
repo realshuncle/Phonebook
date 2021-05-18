@@ -7,6 +7,7 @@ DialogSave::DialogSave(QWidget *parent) :
 {
     QDialog::setModal(true);
     ui->setupUi(this);
+    setWindowTitle("Телефонный справочник");
 }
 
 DialogSave::~DialogSave()

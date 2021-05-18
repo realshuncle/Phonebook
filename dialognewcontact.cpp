@@ -7,6 +7,7 @@ DialogNewContact::DialogNewContact(QWidget *parent) :
 {
     QDialog::setModal(true);
     ui->setupUi(this);
+    setWindowTitle("Телефонный справочник");
    /* connect(ui->btOk, SIGNAL(clicked),
                 this, SIGNAL(onButtonOkPressed()));*/
 }
@@ -32,6 +33,7 @@ void DialogNewContact::closeEvent(QCloseEvent *event)
     ui->leName->setText("");
     ui->lePhone->setText("");
     ui->teInformation->setText("");
+    ui->lePhone->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(233, 99, 0); }");
     event->accept();
     /*QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
     if (rx.exactMatch(ui->lePhone->text())) {
@@ -66,6 +68,7 @@ void DialogNewContact::on_btCancel_clicked()
     ui->leName->setText("");
     ui->lePhone->setText("");
     ui->teInformation->setText("");
+
     this->close();
     //this->destroy();
 }

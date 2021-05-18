@@ -7,6 +7,7 @@ DialogEditContact::DialogEditContact(QWidget *parent) :
 {
     QDialog::setModal(true);
     ui->setupUi(this);
+    setWindowTitle("Телефонный справочник");
    /* connect(ui->btOk, SIGNAL(clicked),
                 this, SIGNAL(onButtonOkPressed()));*/
 }
@@ -33,6 +34,7 @@ void DialogEditContact::closeEvent(QCloseEvent *event)
     ui->leName->setText("");
     ui->lePhone->setText("");
     ui->teInformation->setText("");
+    ui->lePhone->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(233, 99, 0); }");
     event->accept();
     /*QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
     if (rx.exactMatch(ui->lePhone->text())) {
@@ -82,6 +84,7 @@ void DialogEditContact::SetDate(std::vector<std::string> date)
 void DialogEditContact::on_btDelete_clicked()
 {
     onButtonDeletePressed();
+
     this->close();
 }
 void DialogEditContact::onButtonDeletePressed()

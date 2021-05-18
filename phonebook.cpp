@@ -8,6 +8,7 @@ Phonebook::Phonebook(QWidget *parent)
     this->isChanged = false;
     int rowCount = 0;
     ui->setupUi(this);
+    setWindowTitle("Телефонный справочник");
     dialogNewContact = new DialogNewContact();
     dialogEditContact = new DialogEditContact();
     dialogSave = new DialogSave();
@@ -70,6 +71,7 @@ void Phonebook::on_actionNew_triggered()
             ui->tbMain->removeRow(i);
     ui->tbMain->setRowCount(0);
     Controller.NewXml();
+    this->isChanged = true;
 }
 
 
@@ -172,9 +174,14 @@ void Phonebook::ondeleteContact(int id)
     this->isChanged = true;
     Controller.Delete(id);
     ui->tbMain->removeRow(ui->tbMain->currentRow());
+    for (int i = 0; i < ui->tbMain->rowCount(); ++i)
+    {
+        if  ((ui->tbMain->item(i, 3)->text()).toInt() > id)
+            ui->tbMain->item(i, 3)->setText(QString::number((ui->tbMain->item(i, 3)->text()).toInt() - 1));
+    }
 }
-void Phonebook::on_btEdit_clicked()
-{
+//void Phonebook::on_btEdit_clicked()
+//{
     /*//QTableWidgetItem* item;
     std::vector<std::string> temp;
     int row = ui->tbMain->currentRow();
@@ -190,7 +197,7 @@ void Phonebook::on_btEdit_clicked()
     //if (!ui->tbMain.contains(model->data(ui->table->selectionModel()->selectedRows().at(i), 0).toString()))
     dialogEditContact->show();
     //(QString::fromStdString(date[0]))*/
-}
+//}
 
 
 void Phonebook::on_tbMain_cellDoubleClicked(int row, int column)

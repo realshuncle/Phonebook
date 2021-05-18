@@ -50,7 +50,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Name</string>
+        <string>Имя</string>
        </property>
       </widget>
      </item>
@@ -64,7 +64,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>378</width>
+         <width>368</width>
          <height>0</height>
         </size>
        </property>
@@ -87,7 +87,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Phone</string>
+        <string>Телефон</string>
        </property>
       </widget>
      </item>
@@ -101,7 +101,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>378</width>
+         <width>368</width>
          <height>0</height>
         </size>
        </property>
@@ -148,7 +148,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Information</string>
+        <string>Информация</string>
        </property>
       </widget>
      </item>
@@ -162,7 +162,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>378</width>
+         <width>368</width>
          <height>0</height>
         </size>
        </property>
@@ -208,7 +208,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Cancel</string>
+        <string>Отмена</string>
        </property>
       </widget>
      </item>
