@@ -5,16 +5,20 @@ Phonebook::Phonebook(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Phonebook)
 {
+    this->isChanged = false;
     int rowCount = 0;
     ui->setupUi(this);
     dialogNewContact = new DialogNewContact();
     dialogEditContact = new DialogEditContact();
+    dialogSave = new DialogSave();
     QObject::connect(dialogNewContact, SIGNAL(newContactEntered(std::vector<std::string>)),
                           this, SLOT(onnewContactEntered(std::vector<std::string>)));
     QObject::connect(dialogEditContact, SIGNAL(editContactEntered(std::vector<std::string>)),
                           this, SLOT(oneditContact(std::vector<std::string>)));
     QObject::connect(dialogEditContact, SIGNAL(deleteContactEntered(int)),
                           this, SLOT(ondeleteContact(int)));
+    QObject::connect(dialogSave, SIGNAL(buttonPressed(bool)),
+                          this, SLOT(onsave(bool)));
     ui->tbMain->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->tbMain->setColumnCount(4);
     ui->tbMain->setColumnHidden(3, true);
@@ -45,6 +49,21 @@ Phonebook::~Phonebook()
     delete ui;
 }
 
+void Phonebook::closeEvent(QCloseEvent *event)
+{
+    /*ui->leName->setText("");
+    ui->lePhone->setText("");
+    ui->teInformation->setText("");
+    event->accept();*/
+    //QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
+    if (this->isChanged == false) {
+        event->accept();
+    } else {
+        event->ignore();
+        dialogSave->show();
+    }
+}
+
 void Phonebook::on_actionNew_triggered()
 {
     for (int i = 0; i < ui->tbMain->rowCount(); ++i)
@@ -57,6 +76,7 @@ void Phonebook::on_actionNew_triggered()
 void Phonebook::on_actionSave_triggered()
 {
     Controller.SaveXml();
+    this->isChanged = false;
 }
 
 void Phonebook::on_btSearch_clicked()
@@ -98,9 +118,11 @@ void Phonebook::on_btNew_clicked()
 
 void Phonebook::onnewContactEntered(const std::vector<std::string> &con)
 {
+    this->isChanged = true;
     Controller.contact.SetName(con[0]);
     Controller.contact.SetPhone(con[1]);
     Controller.contact.SetInformation(con[2]);
+    //апапапы
     Controller.Add();
 
     ui->tbMain->insertRow(ui->tbMain->rowCount());
@@ -123,6 +145,7 @@ void Phonebook::onnewContactEntered(const std::vector<std::string> &con)
 
 void Phonebook::oneditContact(const std::vector<std::string> &con)
 {
+    this->isChanged = true;
     Controller.contact.SetName(con[0]);
     Controller.contact.SetPhone(con[1]);
     Controller.contact.SetInformation(con[2]);
@@ -146,6 +169,7 @@ void Phonebook::oneditContact(const std::vector<std::string> &con)
 }
 void Phonebook::ondeleteContact(int id)
 {
+    this->isChanged = true;
     Controller.Delete(id);
     ui->tbMain->removeRow(ui->tbMain->currentRow());
 }
@@ -184,5 +208,20 @@ void Phonebook::on_tbMain_cellDoubleClicked(int row, int column)
 
     //if (!ui->tbMain.contains(model->data(ui->table->selectionModel()->selectedRows().at(i), 0).toString()))
     dialogEditContact->show();
+}
+
+void Phonebook::onsave(bool flag)
+{
+    if(flag)
+    {
+        Controller.SaveXml();
+    }
+    this->isChanged = false;
+    this->close();
+}
+
+void Phonebook::on_actionExit_triggered()
+{
+    this->close();
 }
 

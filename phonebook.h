@@ -6,6 +6,11 @@
 #include "ContactController.h"
 #include "dialogeditcontact.h"
 #include "dialognewcontact.h"
+#include "dialogsave.h"
+#include <QCloseEvent>
+//#include <QPrintDialog>
+//#include <QPrinter>
+//#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Phonebook; }
@@ -20,6 +25,7 @@ public:
     ~Phonebook();
 
 private slots:
+    void closeEvent(QCloseEvent *event);
 
     void on_actionNew_triggered();
 
@@ -35,17 +41,23 @@ private slots:
 
     void ondeleteContact(int id);
 
+    void onsave(bool flag);
+
     //void onnewContactEntered(const QString &con);
 
     void on_btEdit_clicked();
 
     void on_tbMain_cellDoubleClicked(int row, int column);
 
+    void on_actionExit_triggered();
+
 private:
     //IOXmlController FileController;
+    bool isChanged;
     ContactController Controller;
     Ui::Phonebook *ui;
     DialogNewContact *dialogNewContact;
     DialogEditContact *dialogEditContact;
+    DialogSave *dialogSave;
 };
 #endif // PHONEBOOK_H

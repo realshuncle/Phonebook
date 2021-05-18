@@ -9,12 +9,14 @@ class Contact
 	static int Amount;
 	int Id;
 	std::string Name;
-	PhoneNumber Phone;
+    //PhoneNumber Phone;
+    std::string Phone;
 	std::string Information;
 public:
 	Contact();
 	//TODO конструктор с Id
-	Contact(std::string name, PhoneNumber phone, std::string information);
+    //Contact(std::string name, PhoneNumber phone, std::string information);
+    Contact(std::string name, std::string phone, std::string information);
 	bool SetPhone(std::string phone);
 	bool SetName(std::string name);
 	static bool SetAmount(int value);

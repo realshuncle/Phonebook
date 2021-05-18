@@ -1,7 +1,7 @@
 #include "phonebook.h"
 #include <QApplication>
-#include <QLocale>
-#include <QTranslator>
+//#include <QLocale>
+//#include <QTranslator>
 //#include <string>
 //#include <vector>
 
@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTranslator translator;
+    /*QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
         const QString baseName = "CourseworkQT_" + QLocale(locale).name();
@@ -17,11 +17,12 @@ int main(int argc, char *argv[])
             a.installTranslator(&translator);
             break;
         }
-    }
+    }*/
     Phonebook w;
+    w.show();
    /*QObject::connect(w.dialogNewContact, SIGNAL(newContactEntered(std::vector<std::string>)),
                          &w, SLOT(onnewContactEntered(std::vector<std::string>)));*/
-    w.show();
+
 
 
 

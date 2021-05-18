@@ -1,4 +1,4 @@
-QT       += core gui xml printsupport
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     PhoneNumber.cpp \
     dialogeditcontact.cpp \
     dialognewcontact.cpp \
+    dialogsave.cpp \
     main.cpp \
     phonebook.cpp \
     tinystr.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     PhoneNumber.h \
     dialogeditcontact.h \
     dialognewcontact.h \
+    dialogsave.h \
     phonebook.h \
     tinystr.h \
     tinyxml.h
@@ -34,6 +36,7 @@ HEADERS += \
 FORMS += \
     dialogeditcontact.ui \
     dialognewcontact.ui \
+    dialogsave.ui \
     phonebook.ui
 
 TRANSLATIONS += \

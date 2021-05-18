@@ -5,11 +5,13 @@ int Contact::Amount = 0;
 Contact::Contact()
 {
 	Name = "";
-	Phone.SetPhone("NONE");
+    Phone = "NONE";
+    //Phone.SetPhone("NONE");
 	Information = "";
 }
 
-Contact::Contact(std::string name, PhoneNumber phone, std::string information)
+//Contact::Contact(std::string name, PhoneNumber phone, std::string information)
+Contact::Contact(std::string name, std::string phone, std::string information)
 {
 	Name = name;
 	Phone = phone;
@@ -18,7 +20,8 @@ Contact::Contact(std::string name, PhoneNumber phone, std::string information)
 
 bool Contact::SetPhone(std::string phone)
 {
-	Phone.SetPhone(phone);
+    //Phone.SetPhone(phone);
+    Phone = phone;
 	return true;
 }
 
@@ -47,7 +50,8 @@ std::string Contact::GetName()
 
 std::string Contact::GetPhone()
 {
-	return Phone.GetPhone();
+    //return Phone.GetPhone();
+    return Phone;
 }
 
 int Contact::GetAmount()

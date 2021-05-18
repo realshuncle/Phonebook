@@ -2,11 +2,7 @@
 
 ContactController::ContactController()
 {
-    bool f = OpenXml("base.contact");
-    if(f)
-    {
-        f = false;
-    }
+   OpenXml("base.contact");
 }
 /*
 bool ContactController::Sort(IOXmlController ioxmlctrl, std::string cond, bool mode)
@@ -149,7 +145,11 @@ bool ContactController::OpenXml(std::string path)
 bool ContactController::NewXml()
 {
     Document = *new TiXmlDocument("base.contact");
-
+    TiXmlDeclaration* decl = new TiXmlDeclaration("1.0", "", "");
+    Document.LinkEndChild(decl);
+    TiXmlElement* element = new TiXmlElement("Contacts");
+    Document.LinkEndChild(element);
+    contact.SetAmount(0);
     return true;
 }
 

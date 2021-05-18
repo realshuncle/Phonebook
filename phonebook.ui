@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>500</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>500</height>
+    <height>430</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>700</width>
-    <height>500</height>
+    <height>430</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -36,6 +36,9 @@
     </sizepolicy>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="sizeConstraint">
@@ -55,6 +58,11 @@
           <height>30</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Search:</string>
         </property>
@@ -62,6 +70,11 @@
       </item>
       <item>
        <widget class="QLineEdit" name="leSearch">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -81,6 +94,11 @@
           <height>30</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Search</string>
         </property>
@@ -95,6 +113,11 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="mouseTracking">
        <bool>true</bool>
@@ -118,7 +141,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -157,6 +180,12 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>570</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPushButton" name="btNew">
         <property name="sizePolicy">
@@ -165,34 +194,13 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>New</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Edit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btDelete">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Delete</string>
         </property>
        </widget>
       </item>
@@ -216,18 +224,10 @@
     <addaction name="actionNew"/>
     <addaction name="actionSave"/>
     <addaction name="separator"/>
-    <addaction name="actionPrint"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuSetting">
-    <property name="title">
-     <string>Setting</string>
-    </property>
-    <addaction name="actionLanguage"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuSetting"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
