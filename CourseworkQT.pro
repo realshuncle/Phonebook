@@ -37,10 +37,7 @@ FORMS += \
     dialogsave.ui \
     phonebook.ui
 
-TRANSLATIONS += \
-    CourseworkQT_ru_RU.ts
 CONFIG += lrelease
-CONFIG += embed_translations
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

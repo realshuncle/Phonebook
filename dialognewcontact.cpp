@@ -8,19 +8,15 @@ DialogNewContact::DialogNewContact(QWidget *parent) :
     QDialog::setModal(true);
     ui->setupUi(this);
     setWindowTitle("Телефонный справочник");
-   /* connect(ui->btOk, SIGNAL(clicked),
-                this, SIGNAL(onButtonOkPressed()));*/
 }
 
 void DialogNewContact::onButtonOkPressed()
 {
-    // Emitting a signal with the new text
     std::vector<std::string> temp;
     temp.push_back(ui->leName->text().toStdString());
     temp.push_back(ui->lePhone->text().toStdString());
     temp.push_back(ui->teInformation->toPlainText().toStdString());
     emit this->newContactEntered(temp);
-    //emit this->newContactEntered("temp");
 }
 
 DialogNewContact::~DialogNewContact()
@@ -35,16 +31,7 @@ void DialogNewContact::closeEvent(QCloseEvent *event)
     ui->teInformation->setText("");
     ui->lePhone->setStyleSheet("QLineEdit { background: rgb(255, 255, 255); selection-background-color: rgb(233, 99, 0); }");
     event->accept();
-    /*QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
-    if (rx.exactMatch(ui->lePhone->text())) {
-        event->accept();
-    } else {
-        event->ignore();
-    }*/
 }
-/*QString DialogNewContact::getTextboxText(){
-    return ui->lePhone->text();
-}*/
 
 void DialogNewContact::on_btOk_clicked()
 {
@@ -55,7 +42,6 @@ void DialogNewContact::on_btOk_clicked()
         ui->lePhone->setText("");
         ui->teInformation->setText("");
         this->close();
-        //this->destroy();
     }
     else {
         ui->lePhone->setStyleSheet("QLineEdit { background: rgb(255, 20, 20); selection-background-color: rgb(233, 99, 0); }");
@@ -70,6 +56,5 @@ void DialogNewContact::on_btCancel_clicked()
     ui->teInformation->setText("");
 
     this->close();
-    //this->destroy();
 }
 

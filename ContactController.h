@@ -31,13 +31,10 @@ public:
     bool Read(int id);
     //функци€ добавл€ет контакт
     bool Add();
-	//функци€ сортировки
-    //bool Sort(IOXmlController ioxmlctrl, std::string cond, bool mode = 0);
 	//функци€ отбирает контакты удовлетвор€ющие условию
     bool FindAll(std::string cond = "");
 	//функци€ возвращающа€ список id выбраннных контактов
 	std::vector<int> GetContacts();
 	//функци€ обновл€ет количество контактов
-    //bool UpdateAmount(int value);
 };
 

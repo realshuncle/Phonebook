@@ -14,7 +14,6 @@ class Contact
 	std::string Information;
 public:
 	Contact();
-	//TODO конструктор с Id
     //Contact(std::string name, PhoneNumber phone, std::string information);
     Contact(std::string name, std::string phone, std::string information);
 	bool SetPhone(std::string phone);
