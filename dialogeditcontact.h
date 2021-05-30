@@ -20,15 +20,10 @@ public:
 
 private slots:
     void closeEvent(QCloseEvent *event);
-
     void onButtonOkPressed();
-
     void onButtonDeletePressed();
-
     void on_btOk_clicked();
-
     void on_btCancel_clicked();
-
     void on_btDelete_clicked();
 
 private:
@@ -42,4 +37,4 @@ signals:
     void deleteContactEntered(int id);
 };
 
-#endif // DIALOGNEWCONTACT_H
+#endif // DIALOGEDITCONTACT_H

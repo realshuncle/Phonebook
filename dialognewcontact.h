@@ -19,11 +19,8 @@ public:
 
 private slots:
     void closeEvent(QCloseEvent *event);
-
     void onButtonOkPressed();
-
     void on_btOk_clicked();
-
     void on_btCancel_clicked();
 
 private:

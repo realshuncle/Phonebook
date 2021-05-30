@@ -1,3 +1,5 @@
+win32:RC_ICONS += phonebook.ico
+
 QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

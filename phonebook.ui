@@ -165,15 +165,30 @@
        <property name="text">
         <string>Имя</string>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>Телефон</string>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
       </column>
       <column>
        <property name="text">
-        <string>Инфрмация</string>
+        <string>Информация</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
        </property>
       </column>
      </widget>
@@ -214,10 +229,20 @@
      <x>0</x>
      <y>0</y>
      <width>700</width>
-     <height>25</height>
+     <height>28</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Файл</string>
     </property>
@@ -239,6 +264,11 @@
    <property name="text">
     <string>Сохранить</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionPrint">
    <property name="text">
@@ -249,10 +279,20 @@
    <property name="text">
     <string>Выход</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionNew">
    <property name="text">
     <string>Очистить</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionLanguage">
