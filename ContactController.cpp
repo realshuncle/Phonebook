@@ -25,9 +25,18 @@ bool ContactController::Read(int id)
     TiXmlElement* el = doc.FirstChildElement().FirstChild(("ID_" + std::to_string(id)).c_str()).Element();
     if (el)
     {
-        contact.SetName(el->FirstChild("Name")->FirstChild()->Value());
-        contact.SetPhone(el->FirstChild("Phone")->FirstChild()->Value());
-        contact.SetInformation(el->FirstChild("Information")->FirstChild()->Value());
+        if (el->FirstChild("Name")->ToElement()->GetText() != nullptr)
+             contact.SetName(el->FirstChild("Name")->FirstChild()->Value());
+        else
+            contact.SetName("");
+        if (el->FirstChild("Phone")->ToElement()->GetText() != nullptr)
+             contact.SetPhone(el->FirstChild("Phone")->FirstChild()->Value());
+        else
+            contact.SetPhone("");
+        if (el->FirstChild("Information")->ToElement()->GetText() != nullptr)
+             contact.SetInformation(el->FirstChild("Information")->FirstChild()->Value());
+        else
+            contact.SetInformation("");
         return true;
     }
     return false;
