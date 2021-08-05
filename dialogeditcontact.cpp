@@ -36,8 +36,8 @@ void DialogEditContact::closeEvent(QCloseEvent *event)
 
 void DialogEditContact::on_btOk_clicked()
 {
-    QRegExp rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
-    if (rx.exactMatch(ui->lePhone->text())) {
+    QRegularExpression rx("\\d\\s\\(\\d\\d\\d\\)\\s\\d\\d\\d-\\d\\d-\\d\\d");
+    if (rx.match(ui->lePhone->text()).hasMatch()) {
         onButtonOkPressed();
         this->close();
     }

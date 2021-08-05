@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QCloseEvent>
+#include <QRegularExpression>
 
 namespace Ui {
 class DialogNewContact;
