@@ -1,11 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
-//#include "PhoneNumber.h"
 
 class Contact
 {
-    //статическая переменная, в которой хранится количество контактов
     static int Amount;
     std::string Name;
     //PhoneNumber Phone;

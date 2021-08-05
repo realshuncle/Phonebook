@@ -8,7 +8,7 @@ Phonebook::Phonebook(QWidget *parent)
     this->isChanged = false;
     int rowCount = 0;
     ui->setupUi(this);
-    setWindowTitle("Телефонный справочник");
+    setWindowTitle("Phonebook");
     dialogNewContact = new DialogNewContact();
     dialogEditContact = new DialogEditContact();
     dialogSave = new DialogSave();

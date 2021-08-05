@@ -50,7 +50,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Имя</string>
+        <string>Name</string>
        </property>
       </widget>
      </item>
@@ -87,7 +87,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Телефон</string>
+        <string>Phone</string>
        </property>
       </widget>
      </item>
@@ -148,7 +148,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Информация</string>
+        <string>Information</string>
        </property>
       </widget>
      </item>
@@ -208,7 +208,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Отмена</string>
+        <string>Cancel</string>
        </property>
       </widget>
      </item>

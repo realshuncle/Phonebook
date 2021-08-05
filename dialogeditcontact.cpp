@@ -7,7 +7,7 @@ DialogEditContact::DialogEditContact(QWidget *parent) :
 {
     QDialog::setModal(true);
     ui->setupUi(this);
-    setWindowTitle("Телефонный справочник");
+    setWindowTitle("Phonebook");
 }
 
 void DialogEditContact::onButtonOkPressed()

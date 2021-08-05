@@ -7,7 +7,7 @@ DialogNewContact::DialogNewContact(QWidget *parent) :
 {
     QDialog::setModal(true);
     ui->setupUi(this);
-    setWindowTitle("Телефонный справочник");
+    setWindowTitle("Phonebook");
 }
 
 void DialogNewContact::onButtonOkPressed()

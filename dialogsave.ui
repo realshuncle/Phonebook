@@ -44,7 +44,7 @@
       <bool>false</bool>
      </property>
      <property name="text">
-      <string>Сохранить изменения?</string>
+      <string>Save changes?</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -61,7 +61,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Да</string>
+        <string>Yes</string>
        </property>
       </widget>
      </item>
@@ -73,7 +73,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Нет</string>
+        <string>No</string>
        </property>
       </widget>
      </item>
