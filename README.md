@@ -19,6 +19,7 @@ Basic requirements for the project:
 1. logical - understandable interface;
 2. easy to use;
 3. precision in work.
+
 Functional requirements:
 1. adding a new contact;
 2. deleting a contact;
