@@ -1,6 +1,6 @@
 # Phonebook
 
-The purpose of the project: writing a program "Phonebook", which will help to facilitate the storage of user phone numbers.
+The purpose of the project: to write a program "Phonebook", which will help to facilitate the storage of user phone numbers.
 
 The task:
 It is necessary to create a program "Phonebook".
