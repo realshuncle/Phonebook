@@ -17,15 +17,15 @@ The program must provide menu-driven selection and the following functions:
 * issuing information about contacts that satisfy the search.
 
 Basic requirements for the project:
-1. logical - understandable interface;
-2. easy to use;
-3. precision in work.
+* logical - understandable interface;
+* easy to use;
+* precision in work.
 
 Functional requirements:
-1. adding a new contact;
-2. deleting a contact;
-3. editing a contact;
-4. search for contacts that satisfy the search.
+* adding a new contact;
+* deleting a contact;
+* editing a contact;
+* search for contacts that satisfy the search.
 
 To implement the user interface, the Qt framework (https://www.qt.io) was used, and specifically its Qt Widjets module (https://doc.qt.io/qt-6/qtwidgets-index.html).
 To work with the xml file that stores contact information, a simple, small tinyxml parser was used, which consists of six files: tinystr.h, tinyxml.h, tinystr.cpp, tinyxml.cpp, tinyxmlerror.cpp, tinyxmlparser.cpp (http://www.grinninglizard.com/tinyxml/).
