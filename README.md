@@ -5,15 +5,15 @@ The purpose of the project: writing a program "Phonebook", which will help to fa
 The task:
 It is necessary to create a program "Phonebook".
 Contact details contain:
-• contact name;
-•	telephone;
-• additional information about the contact.
+* contact name;
+*	telephone;
+* additional information about the contact.
 The program must provide menu-driven selection and the following functions:
-• adding data about a new contact;
-• editing data of an existing contact;
-• deleting contact data;
-• issuing of information about all contacts;
-• issuing information about contacts that satisfy the search.
+* adding data about a new contact;
+* editing data of an existing contact;
+* deleting contact data;
+* issuing of information about all contacts;
+* issuing information about contacts that satisfy the search.
 
 Basic requirements for the project:
 1. logical - understandable interface;
