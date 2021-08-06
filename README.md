@@ -20,7 +20,7 @@ Basic requirements for the project:
 2. easy to use;
 3. precision in work.
 Functional requirements:
-1.adding a new contact;
+1. adding a new contact;
 2. deleting a contact;
 3. editing a contact;
 4. search for contacts that satisfy the search.
