@@ -25,7 +25,7 @@ Functional requirements:
 * adding a new contact;
 * deleting a contact;
 * editing a contact;
-* search for contacts that satisfy the search.
+* searching for contacts that satisfy the search.
 
 To implement the user interface, the Qt framework (https://www.qt.io) was used, and specifically its Qt Widjets module (https://doc.qt.io/qt-6/qtwidgets-index.html).
 To work with the xml file that stores contact information, a simple, small tinyxml parser was used, which consists of six files: tinystr.h, tinyxml.h, tinystr.cpp, tinyxml.cpp, tinyxmlerror.cpp, tinyxmlparser.cpp (http://www.grinninglizard.com/tinyxml/).
