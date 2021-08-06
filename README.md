@@ -8,7 +8,7 @@ Contact details contain:
 * contact name;
 *	telephone;
 * additional information about the contact.
-*
+
 The program must provide menu-driven selection and the following functions:
 * adding data about a new contact;
 * editing data of an existing contact;
